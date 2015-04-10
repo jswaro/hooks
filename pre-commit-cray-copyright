@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Checks for Cray copyright statement of the below format with this
+# year included as the last year listed
+
+GIT_PAGER=""
+blah=`git diff --name-only --staged --diff-filter=AM`
+year=`date +%Y`
+crstr="Copyright \(c\) [0-9, \-]+$f Cray Inc.[ ]+All rights reserved."
+ret=0
+
+for f in $blah; do
+    if [[ $f =~ \.[ch]$ ]]; then
+	# echo "Checking $f for Cray copyright notice..."
+	cr=`grep -E "$crstr" $f`
+	if [ $? != 0 ]; then
+	    echo "*** Missing or incorrect copyright string in $f"
+	    ret=1
+	fi
+    fi
+done
+
+exit $ret

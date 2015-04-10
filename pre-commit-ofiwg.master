@@ -1,0 +1,6 @@
+#!/bin/bash 
+
+PATH=$PATH:~/git/hooks
+
+pre-commit-cray-copyright
+pre-commit-linux-coding-style
