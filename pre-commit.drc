@@ -3,4 +3,5 @@
 PATH=$PATH:~/git/hooks
 
 pre-commit-cray-copyright
+pre-commit-pep8
 #pre-commit-linux-coding-style
