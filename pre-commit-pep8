@@ -1,0 +1,14 @@
+#!/bin/bash
+# Pre-commit hook for running the Linux coding style checker
+# Available at:
+#  https://github.com/torvalds/linux/blob/master/scripts/checkpatch.pl
+#  https://github.com/torvalds/linux/blob/master/scripts/spelling.txt
+
+SCRIPTS="src/drc/scripts/drcc src/drc/scripts/drccli src/drc/scripts/drcs"
+errors=$(pep8 . $SCRIPTS | wc -l)
+if [[ $errors -ne 0 ]] ; then
+	pep8 . $SCRIPTS 
+	exit 1
+fi
+
+exit 0
