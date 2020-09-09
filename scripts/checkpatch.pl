@@ -769,7 +769,7 @@ sub read_words {
 }
 
 my $const_structs;
-if (show_type("CONST_STRUCT")) {
+if (0)  # show_type("CONST_STRUCT")) {
 	read_words(\$const_structs, $conststructsfile)
 	    or warn "No structs that should be const will be found - file '$conststructsfile': $!\n";
 }
