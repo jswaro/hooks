@@ -6,7 +6,7 @@
 GIT_PAGER=""
 blah=`git diff --name-only --staged --diff-filter=AM`
 year=`date +%Y`
-crstr="Copyright \(c\) [0-9, \-]+$f Cray Inc.[ ]+All rights reserved."
+crstr="\(C\) Copyright [0-9, \-]+$f Hewlett Packard Enterprise Development LP"
 ret=0
 
 for f in $blah; do
