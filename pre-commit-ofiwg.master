@@ -2,5 +2,7 @@
 
 PATH=$PATH:~/git/hooks
 
+set -e
+
 pre-commit-cray-copyright
 pre-commit-linux-coding-style
